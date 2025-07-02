@@ -130,6 +130,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
   Widget build(BuildContext context) {
     String question = questions[shuffledIndexes[currentIndex]];
 
+    
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Domande Sistemi Operativi'),
@@ -146,20 +148,29 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 onPressed: _previousQuestion,
               ),
               Expanded(
-                child: Card(
-                  elevation: 10,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Text(
-                      question,
-                      style: TextStyle(fontSize: 18),
-                      textAlign: TextAlign.center,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center, 
+                  crossAxisAlignment: CrossAxisAlignment.center, 
+                children: [
+                  Expanded(
+                    child: Card(
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: Text(
+                          question,
+                          style: TextStyle(fontSize: 18),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                  Text(_currentIndex.toString())
+                ]
+              ),
               ),
               IconButton(
                 icon: Icon(Icons.arrow_right, size: 36),
